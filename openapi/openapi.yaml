@@ -6,10 +6,10 @@ info:
   contact:
     name: Contact our support
     email: tom.gilissen@naturalis.nl
-    url: http://naturalis.nl/contact
+    url: https://www.naturalis.nl/contact
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
     url: 'https://redocly.github.io/openapi-template/logo.png'
     altText: OpenAPI example logo
@@ -25,25 +25,12 @@ externalDocs:
   description: "Find out how to create a GitHub repo for your OpenAPI definition."
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
-#  - name: Echo
-#    description: "Example echo operations."
+  - name: Customer
+    description: Customer operations.
   - name: User
-    description: "Example actions on user accounts."
-#  - name: Admin
-#    description: "Example operations reserved for administrators."
-#  - name: Info
-#    description: "Example operations for retrieving information."
+    description: Operations about users.
 #  - name: Tag
 #    description: "This is a tag description."
-x-tagGroups:
-  - name: General
-    tags:
-      - User
-      - Info
-      - Echo
-  - name: Administration
-    tags:
-      - Admin
 servers:
   - url: https://{tenant}/api/v1
     variables:
@@ -52,8 +39,12 @@ servers:
         description: Your tenant id
   - url: https://example.com/api/v1
 paths:
-  '/users/{username}':
-    $ref: 'paths/users_{username}.yaml'
+  /users/{username}:
+    $ref: paths/users_{username}.yaml
+  /v1/customers:
+    $ref: paths/v1/customers.yaml
+  /v1/customers/{customer_id}:
+    $ref: paths/v1/customers_{customer_id}.yaml
 #  '/user':
 #    $ref: 'paths/user.yaml'
 #  '/user/list':
@@ -64,6 +55,8 @@ paths:
 #    $ref: paths/pathItemWithExamples.yaml
 #  '/echo':
 #    $ref: 'paths/echo.yaml'
+security:
+  - basic_auth: []
 components:
   securitySchemes:
     main_auth:
