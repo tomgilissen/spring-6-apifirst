@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Order
+  summary: Find order by ID
+  description: Find order by ID
+  operationId: getOrderById
+  parameters:
+    - name: orderId
+      in: path
+      description: The ID of the order to retrieve
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/v1/order_list.yaml"
+    '400':
+      description: Bad request
+    '404':
+      description: Not found

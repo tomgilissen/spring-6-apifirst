@@ -3,7 +3,7 @@ properties:
   id:
     type: string
     format: uuid
-    description: Unique identifier representing a specific customer.
+    description: The unique identifier of this customer's order
   name:
     $ref: name.yaml
   shipToAddress:
@@ -12,9 +12,9 @@ properties:
     $ref: address.yaml
   email:
     type: string
+    description: The email address of the customer
   phone:
     type: string
-  paymentMethods:
-    type: array
-    items:
-      $ref: payment_method.yaml
+    description: The phone number of the customer
+  selectedPaymentMethod:
+    $ref: payment_method.yaml

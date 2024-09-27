@@ -72,11 +72,11 @@ webhooks:
       operationId: userInfo
       tags:
         - Info
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: 'components/schemas/User.yaml'
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: 'components/schemas/User.yaml'
       responses:
         '200':
           description: "Successfully retrieved information about a new user."
