@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  category:
+    type: string
+    description: The category of a product
+  description:
+    type: string
+    description: The description of a category
+  dateCreated:
+    type: string
+    format: date-time
+  dateUpdated:
+    type: string
+    format: date-time

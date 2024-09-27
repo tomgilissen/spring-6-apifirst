@@ -27,10 +27,10 @@ externalDocs:
 tags:
   - name: Customer
     description: Customer operations.
+  - name: Product
+    description: Product operations.
   - name: User
     description: Operations about users.
-#  - name: Tag
-#    description: "This is a tag description."
 servers:
   - url: https://{tenant}/api/v1
     variables:
@@ -40,21 +40,15 @@ servers:
   - url: https://example.com/api/v1
 paths:
   /users/{username}:
-    $ref: paths/users_{username}.yaml
+    $ref: "paths/users_{username}.yaml"
   /v1/customers:
-    $ref: paths/v1/customers.yaml
+    $ref: "paths/v1/customers.yaml"
   /v1/customers/{customer_id}:
-    $ref: paths/v1/customers_{customer_id}.yaml
-#  '/user':
-#    $ref: 'paths/user.yaml'
-#  '/user/list':
-#    $ref: 'paths/user-status.yaml'
-#  /pathItem:
-#    $ref: paths/pathItem.yaml
-#  /pathItemWithExamples:
-#    $ref: paths/pathItemWithExamples.yaml
-#  '/echo':
-#    $ref: 'paths/echo.yaml'
+    $ref: "paths/v1/customers_{customer_id}.yaml"
+  /v1/products:
+    $ref: "paths/v1/products.yaml"
+  /v1/products/{product_id}:
+    $ref: "paths/v1/products_{product_id}.yaml"
 security:
   - basic_auth: []
 components:
